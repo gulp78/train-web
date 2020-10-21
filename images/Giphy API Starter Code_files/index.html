@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!-- saved from url=(0102)https://cdpn.io/boomboom/v2/index.html?editors=1011&key=iFrameKey-95b576c5-0694-9792-4a60-66ff1f0c07ad -->
+<html lang="en" class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  
+  <title>CodePen Demo</title>
+
+  <meta name="robots" content="noindex">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+  <link rel="canonical" href="https://codepen.io/Shadow_Phantom/pen/WNxNGdR?editors=1011">
+  
+  
+  
+
+  <style class="INLINE_PEN_STYLESHEET_ID">
+    
+  </style>
+
+  
+<script src="./iframeConsoleRunner-7f4d47902dc785f30dedcac9c996b9f31d4dfcc33567cc48f0431bc918c2bf05.js.download"></script>
+<script src="./iframeRefreshCSS-e03f509ba0a671350b4b363ff105b2eb009850f34a2b4deaadaa63ed5d970b37.js.download"></script>
+<script src="./iframeRuntimeErrors-29f059e28a3c6d3878960591ef98b1e303c1fe1935197dae7797c017a3ca1e82.js.download"></script>
+
+</head>
+
+<body>
+  <form id="search-form">
+  <label for="search-term">Search for Gifs:</label>
+  <input type="text" name="search-term">
+  <input type="submit">
+</form>
+<div id="giphy-results"><img src="./200w.gif"><img src="./200w(1).gif"><img src="./200w(2).gif"><img src="./200w(3).gif"><img src="./200w(4).gif"><img src="./200w(5).gif"><img src="./200w(6).gif"><img src="./200w(7).gif"><img src="./200w(8).gif"><img src="./200w(9).gif"><img src="./200w(10).gif"><img src="./200w(11).gif"><img src="./200w(12).gif"><img src="./200w(13).gif"><img src="./200w(14).gif"><img src="./200w(15).gif"><img src="./200w(16).gif"><img src="./200w(17).gif"><img src="./200w(18).gif"><img src="./200w(19).gif"><img src="./200w(20).gif"><img src="./200w(21).gif"><img src="./200w(22).gif"><img src="./200w(23).gif"><img src="./200w(24).gif"></div>
+  
+  
+<script src="./stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js.download"></script>
+  <script id="INLINE_PEN_JS_ID">
+    let userSearch = document.querySelector('input[name="search-term"]');
+const submitter = document.getElementById("search-form");
+
+submitter.onsubmit = LoadGifs;
+
+async function LoadGifs(event) {
+  event.preventDefault();
+
+  const giphyresults = document.getElementById("giphy-results");
+
+  giphyresults.innerHTML = "";
+
+  let theSearch = userSearch.value;
+  let cleanSearch = theSearch.trim();
+
+  const urlLink = `https://api.giphy.com/v1/gifs/search?api_key=RdtjP2fKBAnQ9O35pXh8PDrSU3kr44ut&q=${cleanSearch}&limit=25&offset=0&rating=g&lang=en`;
+
+  const response = await fetch(urlLink);
+  const data = await response.json();
+  const results = data.data;
+
+
+  results.forEach(function (result) {
+    const url = result.images.fixed_width.url;
+    const image = document.createElement("img");
+    image.setAttribute("src", url);
+
+    document.getElementById("giphy-results").appendChild(image);
+  });
+
+
+}
+
+// When the user submits the search form, prevent the page from reloading and make an API request to Giphy's search endpoint.
+// Visit: https://developers.giphy.com/docs/api/endpoint/
+
+// Display all the results in the #giphy-results div
+// Each new search should replace the previous search results
+
+// CSS Bonus: Use flex to display the results in a responsive, clean layout
+
+//RdtjP2fKBAnQ9O35pXh8PDrSU3kr44ut
+
+//api.giphy.com/v1/gifs/search
+
+//RdtjP2fKBAnQ9O35pXh8PDrSU3kr44ut.giphy.com/v1/gifs/search?dog
+    //# sourceURL=pen.js
+  </script>
+
+
+</body></html>

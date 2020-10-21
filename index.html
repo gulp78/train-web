@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victorian Trains</title>
+    <link rel="icon" href="./images/VicTransport.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- modal -->
+    <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered" >
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body centre-columned-content" >
+                    <!-- image carousel -->
+                    <div id="carouselExampleFade" class="carousel slide carousel-fade carousel-height" data-ride="carousel" data-interval="false">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img src="" class="d-block w-100" id="modal-image1" >
+                          </div>
+                          <div class="carousel-item">
+                            <img src="" class="d-block w-100" id="modal-image2">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="" class="d-block w-100" id="modal-image3">
+                          </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </div>
+                    <!-- little info boxes -->
+                    <div class="container modal-margin">
+                        <div class="row">
+                            <div class="col-sm centre-content">
+                                <div class="card" style="width: 10rem;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Years of service:</h5>
+                                        <p class="card-text" id="ServiceYears">xxxx-xxxx</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm centre-content">
+                                <div class="card" style="width: 10rem;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Top Speed:</h5>
+                                        <p class="card-text" id="MaxSpeed">xxxkmh</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm centre-content">
+                                <div class="card" style="width: 10rem;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Built By:</h5>
+                                        <p class="card-text" id="Company">[company]</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- main info -->
+                    <div id="modal-body">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- head/nav bar -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-4 d-flex align-items-center flex-start-content">
+                    <h1 class="web-title align-middle">Victorian Transport</h1>
+                </div>
+                <div class="col-6 centre-content">
+                    <nav class="nav-bar">
+                        <button class="train-btn btn btn-primary" id="suburban-btn">Suburban Trains</button>
+                        <button class="train-btn btn btn-primary" id="regional-btn">Regional Trains</button>
+                    </nav>
+                </div>
+                <div class="col">
+                    <button class="theme-changer align-middle "></button>
+                </div>
+            </div>
+        </div>
+        
+        
+    </header>
+    <section class="main-body">
+
+        <!-- Suburban Trains -->
+
+        <button type="button" class="train-choice" id="Dogbox" name="Suburban" data-toggle="modal" data-target="#Modal">
+            <div class="train-img dogbox" name="dogbox"></div>
+            <h1 class="train-title">Dogbox Tait/Swing-Door Train</h1>
+            <p class="train-desc">
+                Built between 1887 and 1909, these started out as carriages behind steam locomotives.
+                In 1919 they were converted to Electric Mutiple Unit
+            </p>
+        </button>
+
+        <button class="train-choice" id="Tait" name="Suburban" data-toggle="modal" data-target="#Modal">
+            <div class="train-img tait"></div>
+            <h1 class="train-title">Tait Train</h1>
+            <p class="train-desc">
+                Built in 1910, These trains were meant to be converted to Electric Mutiple Unit but was delayed by WWI.
+                The Tait was converted to an Electric Mutiple Unit in 1918 and run on a trial on the first electricified
+                line, the Showgrounds line.
+            </p>
+        </button>
+
+        <button class="train-choice" id="Harris-S1" name="Suburban" data-toggle="modal" data-target="#Modal">
+            <div class="train-img harris-s1"></div>
+            <h1 class="train-title">Harris Series 1</h1>
+            <p class="train-desc">
+                Built in 1956, the series 1 was the first of the Harris's to be built, sporting both a new door layout
+                and new seat layout, these revolutionised the way people commuted around Melbourne to this day
+            </p>
+        </button>
+
+        <button class="train-choice" id="Harris-S2" name="Suburban" data-toggle="modal" data-target="#Modal">
+            <div class="train-img harris-s2"></div>
+            <h1 class="train-title">Harris Series 2</h1>
+            <p class="train-desc">
+                The Harris Series 2, while very much like the Series 1, was built with modifications were the Series 1
+                lacked, such as a guard window and the first time a gangway existed letting commuters go from carriage
+                to carriage without having to exit the train.
+            </p>
+        </button>
+
+        <button class="train-choice" id="Hitachi" name="Suburban" data-toggle="modal" data-target="#Modal">
+            <div class="train-img hitachi"></div>
+            <h1 class="train-title">Hitachi</h1>
+            <p class="train-desc">
+                The Hitachi was originally designed to be a Harris Series 3, but chosen to be called Hitachi after the
+                designer. The Hitachi sported a whole new aero-dynamic design, and a metro-esk seat layout as Melbourne
+                had grown so much that the railway network needed to be converted to a Metro.
+            </p>
+        </button>
+
+        <button class="train-choice" id="Comeng" name="Suburban" data-toggle="modal" data-target="#Modal">
+            <div class="train-img comeng"></div>
+            <h1 class="train-title">Comeng</h1>
+            <p class="train-desc">
+                Built in 1980 and 1990's the Comengs were made to replace the aging Tait and Harris train. The Comeng
+                was named after the manufracturer Commonwealth Engineering, and was the first train in Melbourne to
+                sport air coniditoning.
+            </p>
+        </button>
+
+        <button class="train-choice" id="Refurb-Harris" name="Suburban" data-toggle="modal" data-target="#Modal">
+            <div class="train-img refurbharris"></div>
+            <h1 class="train-title">Refurbished Harris/Grey Ghost</h1>
+            <p class="train-desc">
+                After the success of the Comeng, Metropolitan Tranist chose the Harris S2 needed a refurbishment based
+                on the Comeng to life extend them. These refurbishments included red carpet, cushioned seats and an
+                aircon.
+            </p>
+        </button>
+
+        <button class="train-choice" id="Trial-4D" name="Suburban" data-toggle="modal" data-target="#Modal">
+            <div class="train-img trial-4D"></div>
+            <h1 class="train-title">4D</h1>
+            <p class="train-desc">
+                Introduced in 1992, the 4D was made to see if Melbourne could converted to double deckers, these were
+                unfortunatley plagued with bunch of problems ending up being pulled by the Comeng most of the time.
+            </p>
+        </button>
+
+        <button class="train-choice" id="Xtrapolis" name="Suburban" data-toggle="modal" data-target="#Modal">
+            <div class="train-img xtrapolis"></div>
+            <h1 class="train-title">X'trapolis 100</h1>
+            <p class="train-desc">
+                Entering service in 2002, this was Connex's attempt to replace the aging Hitachi Fleet, and while they
+                were successful, they are known by commuters for being uncomfortable to ride on due to being absurdly
+                bouncy.
+            </p>
+        </button>
+
+        <button class="train-choice" id="Nexas" name="Suburban" data-toggle="modal" data-target="#Modal">
+            <div class="train-img nexas"></div>
+            <h1 class="train-title">Siemens Nexas</h1>
+            <p class="train-desc">
+                Built between 2002 and 2005, the Nexas was M>Train's answer to replacing the aging Hitachi Fleet, but
+                due to how wide and long they were, M>Train had to extend its platforms along its routes to make space
+                for them.
+            </p>
+        </button>
+
+        <button class="train-choice" id="HCMT" name="Suburban" data-toggle="modal" data-target="#Modal">
+            <div class="train-img HCMT"></div>
+            <h1 class="train-title">High-Capacity Metro Train</h1>
+            <p class="train-desc">
+                The new High-Capacity Metro Trains are being made due to Melbourne's growing population. reintroducing
+                the 7-Car consist and introducing a full consist that you can walk right through from end to end for the
+                first time.
+            </p>
+        </button>
+
+        <!-- Regional trains -->
+
+        <button class="train-choice hideContent" id="mckeen" name="regional" data-toggle="modal" data-target="#Modal">
+            <div class="train-img mckeen"></div>
+            <h1 class="train-title">Mckeen Railmotor</h1>
+            <p class="train-desc">
+                The Mckeen Railmotor, being the first of its kind, was ahead of its time, being able to run without coal and being
+                overall more flexibile than a steam locomotive, they seemed too good to be true; unfortunatley they were and 
+                were quickly converted to just carriages.
+            </p>
+        </button>
+
+        <button class="train-choice hideContent" id="aec" name="regional" data-toggle="modal" data-target="#Modal">
+            <div class="train-img aec"></div>
+            <h1 class="train-title">AEC Railmotor</h1>
+            <p class="train-desc">
+                With the success of Clapp's buses, the AEC was the next obvious step to keep the Railway relevant during the Great
+                Depression, using AEC motors, and Clapp's bus chassis, these railmotors managed to be the stepping stone for all
+                railmotors to come.
+            </p>
+        </button>
+
+        <button class="train-choice hideContent" id="leyland" name="regional" data-toggle="modal" data-target="#Modal">
+            <div class="train-img leyland"></div>
+            <h1 class="train-title">Leyland Railmotor</h1>
+            <p class="train-desc">
+                Introduced after the success of the AEC Railmotor, these were both more comfortable and powerful than the AEC.
+            </p>
+        </button>
+
+        <button class="train-choice hideContent" id="walker" name="regional" data-toggle="modal" data-target="#Modal">
+            <div class="train-img walker"></div>
+            <h1 class="train-title">Walker Railmotor</h1>
+            <p class="train-desc">
+                Being the succesor of the AEC Railmotor, the Walker railmotors replaced the AEC's on country branch lines and a few smaller mainline linessuch as the Healesville line.
+            </p>
+        </button>
+
+        <button class="train-choice hideContent" id="derm" name="regional" data-toggle="modal" data-target="#Modal">
+            <div class="train-img derm"></div>
+            <h1 class="train-title">Diesel Electric RailMotor (DERM)</h1>
+            <p class="train-desc">
+                Originally being Petrol-Electric, the DERM were the longest lived railmotor on the Victorian Railways, and being the backbone for many lines today until the modern
+                sprinters came in replacing them.
+            </p>
+        </button>
+
+        <button class="train-choice hideContent" id="drc" name="regional" data-toggle="modal" data-target="#Modal">
+            <div class="train-img drc"></div>
+            <h1 class="train-title">DRC Railmotor</h1>
+            <p class="train-desc">
+                The first railmotor/railcar to have air conditioning, these trains were used on longer journey's such as those up to Ararat; unfortunatley they were unreliable
+                being replaced by buses more often than not, with the Sprinters quickly replacing them.
+            </p>
+        </button>
+
+        <button class="train-choice hideContent" id="sprint" name="regional" data-toggle="modal" data-target="#Modal">
+            <div class="train-img sprint"></div>
+            <h1 class="train-title">Sprinter Railmotor</h1>
+            <p class="train-desc">
+                The most modern Railmotor to still be running today; Mainly being seen running on the Stony Point line, these have become the backbone for small lines
+                and are a substitute for the H type carriages. 
+            </p>
+        </button>
+
+        <button class="train-choice hideContent" id="vlocity" name="regional" data-toggle="modal" data-target="#Modal">
+            <div class="train-img vlocity"></div>
+            <h1 class="train-title">Vlocity</h1>
+            <p class="train-desc">
+                The main train of the Victorian Country side, serving the busiest regional lines with an upgrade being made for long-haul, the Vlocity's are defiently not going away
+                anytime soon.
+            </p>
+        </button>
+
+    </section>
+    <script src="js/arrays.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    
+    <!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+</body>
+
+</html>
