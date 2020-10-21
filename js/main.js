@@ -196,6 +196,7 @@ $(document).ready(function () {
 
         if (WhiteTheme == true) {
             //change theme to dark
+            $("body").addClass("dark-mode")
             $(".card").addClass("dark-mode");
             $(".train-choice").addClass("dark-mode");
             $(".main-body").addClass("dark-mode");
@@ -206,6 +207,7 @@ $(document).ready(function () {
             WhiteTheme = false;
         } else {
             //change theme to white
+            $("body").removeClass("dark-mode")
             $(".card").removeClass("dark-mode");
             $(".train-choice").removeClass("dark-mode");
             $(".main-body").removeClass("dark-mode");
