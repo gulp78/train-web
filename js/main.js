@@ -1,6 +1,7 @@
 $(document).ready(function () {
    //Nav Menu
     $(".train-btn").click(trains)
+    //$("#navbr").load("./resources/navbar.html");
 
     function trains(){
         if(this.getAttribute('id').toLowerCase() == "suburban-btn"){
@@ -192,8 +193,9 @@ $(document).ready(function () {
 
     let WhiteTheme = true;
 
-    function changeTheme() {
+    
 
+    function changeTheme() {
         if (WhiteTheme == true) {
             //change theme to dark
             $("body").addClass("dark-mode")
