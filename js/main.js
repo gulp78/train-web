@@ -1,20 +1,20 @@
 $(document).ready(function () {
-   //Nav Menu
+    //Nav Menu
     $(".train-btn").click(trains)
     //$("#navbr").load("./resources/navbar.html");
 
-    function trains(){
-        if(this.getAttribute('id').toLowerCase() == "suburban-btn"){
+    function trains() {
+        if (this.getAttribute('id').toLowerCase() == "suburban-btn") {
             $("button[name*='Suburban']").removeClass("hideContent")
             $("button[name*='regional']").addClass("hideContent")
-        }else{
+        } else {
             $("button[name*='Suburban']").addClass("hideContent")
             $("button[name*='regional']").removeClass("hideContent")
         }
     }
 
     //modal stuff
-    const modalTitle = document.getElementById("ModalLabel"); 
+    const modalTitle = document.getElementById("ModalLabel");
     const modalDesc = document.getElementById("modal-body");
     const modalImage1 = document.getElementById("modal-image1");
     const modalImage2 = document.getElementById("modal-image2");
@@ -191,9 +191,9 @@ $(document).ready(function () {
     //theme changer
     $(".theme-changer").click(changeTheme)
 
-    let WhiteTheme = true;
+    let WhiteTheme = $("body").data("WhiteMode");
 
-    
+
 
     function changeTheme() {
         if (WhiteTheme == true) {
@@ -206,7 +206,9 @@ $(document).ready(function () {
             $(".modal-body").addClass("dark-mode");
             $(".card-body").addClass("dark-mode");
             $(".theme-changer").addClass("dark-mode");
+            $("body").data("WhiteMode", false)
             WhiteTheme = false;
+            console.log("white theme off")
         } else {
             //change theme to white
             $("body").removeClass("dark-mode")
@@ -217,7 +219,9 @@ $(document).ready(function () {
             $(".modal-body").removeClass("dark-mode");
             $(".card-body").removeClass("dark-mode");
             $(".theme-changer").removeClass("dark-mode");
+            $("body").data("WhiteMode", true)
             WhiteTheme = true;
+            console.log("white theme on")
         }
 
     }
