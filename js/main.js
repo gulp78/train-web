@@ -192,11 +192,12 @@ $(document).ready(function () {
     $(".theme-changer").click(changeTheme)
 
     let WhiteTheme = true;
-    if (localStorage.getItem("WhiteMode") == null) {
+    if (localStorage.getItem("WhiteMode")) {
         localStorage.setItem("WhiteMode", true)
     }
     WhiteTheme = localStorage.getItem("WhiteMode");
 
+    changeTheme()
 
 
     function changeTheme() {
@@ -210,8 +211,8 @@ $(document).ready(function () {
             $(".modal-body").addClass("dark-mode");
             $(".card-body").addClass("dark-mode");
             $(".theme-changer").addClass("dark-mode");
-            localStorage.setItem("WhiteMode", false)
             WhiteTheme = false;
+            localStorage.setItem("WhiteMode", WhiteTheme)
         } else {
             //change theme to white
             $("body").removeClass("dark-mode")
@@ -222,8 +223,8 @@ $(document).ready(function () {
             $(".modal-body").removeClass("dark-mode");
             $(".card-body").removeClass("dark-mode");
             $(".theme-changer").removeClass("dark-mode");
-            localStorage.setItem("WhiteMode", true)
             WhiteTheme = true;
+            localStorage.setItem("WhiteMode", WhiteTheme)
         }
 
     }
