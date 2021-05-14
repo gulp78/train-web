@@ -191,12 +191,16 @@ $(document).ready(function () {
     //theme changer
     $(".theme-changer").click(changeTheme)
 
-    let WhiteTheme = $("body").data("WhiteMode");
+    let WhiteTheme = true;
+    if (localStorage.getItem("WhiteMode") == null) {
+        localStorage.setItem("WhiteMode", true)
+    }
+    WhiteTheme = localStorage.getItem("WhiteMode");
 
 
 
     function changeTheme() {
-        if (WhiteTheme == true) {
+        if (WhiteTheme === true) {
             //change theme to dark
             $("body").addClass("dark-mode")
             $(".card").addClass("dark-mode");
@@ -206,9 +210,8 @@ $(document).ready(function () {
             $(".modal-body").addClass("dark-mode");
             $(".card-body").addClass("dark-mode");
             $(".theme-changer").addClass("dark-mode");
-            $("body").data("WhiteMode", false)
+            localStorage.setItem("WhiteMode", false)
             WhiteTheme = false;
-            console.log("white theme off")
         } else {
             //change theme to white
             $("body").removeClass("dark-mode")
@@ -219,9 +222,8 @@ $(document).ready(function () {
             $(".modal-body").removeClass("dark-mode");
             $(".card-body").removeClass("dark-mode");
             $(".theme-changer").removeClass("dark-mode");
-            $("body").data("WhiteMode", true)
+            localStorage.setItem("WhiteMode", true)
             WhiteTheme = true;
-            console.log("white theme on")
         }
 
     }
