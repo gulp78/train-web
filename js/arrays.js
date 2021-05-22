@@ -53,5 +53,9 @@ const trainImages = [
 
     "./images/AEC/original-aec.jpg",
     "./images/AEC/later-aec.jpg",
-    "./images/AEC/aec-tait.jpg"
+    "./images/AEC/aec-tait.jpg",
+
+    "./images/xtrap20/blueprint2.jpg",
+    "./images/xtrap20/blueprint3.jpg",
+    "./images/xtrap20/blueprint1.jpg"
 ]

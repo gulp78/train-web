@@ -134,7 +134,7 @@ $(document).ready(function () {
                 modalImage2.src = trainImages[28];
                 modalImage3.src = trainImages[29];
                 servYears.innerHTML = "2003-present";
-                maxSpd.innerHTML = "147kmh";
+                maxSpd.innerHTML = "130kmh";
                 compName.innerHTML = "Siemens";
                 $("#modal-body").load("./resources/nexas.html");
                 break;
@@ -147,6 +147,16 @@ $(document).ready(function () {
                 maxSpd.innerHTML = "130kmh";
                 compName.innerHTML = "Downer Rail";
                 $("#modal-body").load("./resources/hcmt.html");
+                break;
+            case 'xtrapolis20':
+                modalTitle.innerHTML = "X'trapolis 2.0";
+                modalImage1.src = trainImages[42];
+                modalImage2.src = trainImages[43];
+                modalImage3.src = trainImages[44];
+                servYears.innerHTML = "2024";
+                maxSpd.innerHTML = "130kmh";
+                compName.innerHTML = "Alstom";
+                $("#modal-body").load("./resources/xtrap20.html");
                 break;
             case 'leyland':
                 modalTitle.innerHTML = "Leyland Railmotor";
