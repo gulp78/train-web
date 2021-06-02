@@ -221,6 +221,7 @@ $(document).ready(function () {
             $(".modal-body").addClass("dark-mode");
             $(".card-body").addClass("dark-mode");
             $(".theme-changer").addClass("dark-mode");
+            $(".btn-close").addClass("btn-close-white");
             WhiteTheme = false;
             localStorage.setItem("WhiteMode", WhiteTheme)
         } else {
@@ -233,6 +234,7 @@ $(document).ready(function () {
             $(".modal-body").removeClass("dark-mode");
             $(".card-body").removeClass("dark-mode");
             $(".theme-changer").removeClass("dark-mode");
+            $(".btn-close").removeClass("btn-close-white");
             WhiteTheme = true;
             localStorage.setItem("WhiteMode", WhiteTheme)
         }

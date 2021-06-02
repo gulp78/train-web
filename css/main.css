@@ -173,6 +173,18 @@ header {
   height: 100% !important;
 }
 
+.close{
+  border: solid lightgrey;
+  background-color: ghostwhite;
+  border-radius: 10px;
+  outline: none;
+  text-align: center;
+}
+
+.close:active{
+  background-color: grey;
+}
+
 /* Suburban images */
 
 .dogbox {
